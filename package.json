@@ -35,5 +35,6 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "xmldom": "^0.1.27"
   }
 }

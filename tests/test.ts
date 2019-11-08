@@ -1,7 +1,10 @@
+import { AccountReport } from "../types/AccountReport";
+import { CAMT } from "..";
+
 const fs = require('fs');
 const path = require('path');
 
-describe('parse test', () => {
+describe('camt.052', () => {
     let camt: string;
     
     beforeAll(() => {
@@ -9,9 +12,9 @@ describe('parse test', () => {
     })
     
     
-    it('read', function () {
-        console.log(camt);
-
-        expect(camt).toBeDefined();
+    it('parse should not return a result', function () {
+        const report = CAMT.parse(camt);
+        console.log(report.groupHeader.messageId);
+        expect(report).toBeDefined();
     });
 });
