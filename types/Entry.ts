@@ -14,4 +14,13 @@ export class Entry {
     get creditdebitIndicator() {
         return this.element?.getElementsByTagName('CdtDbtInd')[0]?.textContent;
     }
+
+    get bookindDate() {
+        const bookingDate = this.element?.getElementsByTagName('BookgDt')[0]
+        return {date: bookingDate?.getElementsByTagName('Dt')[0]?.textContent};
+    }
+
+    get accountServiceRef() {
+        return this.element?.getElementsByTagName('AcctSvcrRef')[0]?.textContent;
+    }
 }

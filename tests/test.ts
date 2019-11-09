@@ -71,6 +71,8 @@ describe('camt.052', () => {
                 expect(entry.amount.currency).toEqual('EUR');
                 expect(entry.amount.value).toEqual('4.02');
                 expect(entry.creditdebitIndicator).toEqual('DBIT');
+                expect(entry.bookindDate.date).toEqual('2019-11-08');
+                expect(entry.accountServiceRef).toEqual('NONREF');
             });
         });
     });
