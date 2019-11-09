@@ -1,6 +1,6 @@
 import { AccountReport } from "../types/AccountReport";
-import { CAMT } from "..";
 import { Entry } from "../types/Entry";
+import CAMT from "../index";
 
 const fs = require('fs');
 const path = require('path');
