@@ -2,7 +2,7 @@ export class Entry {
     constructor(private element: Element|null) { }
 
     get reference() {
-       return this.element?.getElementsByTagName('NtryRef')[0]?.textContent;
+        return this.element?.getElementsByTagName('NtryRef')[0]?.textContent;
     }
 
     get amount() {

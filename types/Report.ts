@@ -4,11 +4,11 @@ export class Report {
     constructor(private element: Element) { }
 
     get id() {
-       return this.element.getElementsByTagName('Id')[0]?.textContent;
+        return this.element.getElementsByTagName('Id')[0]?.textContent;
     }
 
     get electronicSequenceNumber() {
-       return this.element.getElementsByTagName('ElctrncSeqNb')[0]?.textContent;
+        return this.element.getElementsByTagName('ElctrncSeqNb')[0]?.textContent;
     }
 
     get creationDateTime() {
@@ -35,15 +35,15 @@ export class Account {
 
     get id() {
         const idElem = this.element.getElementsByTagName('Id')[0];
-        return { iban: idElem?.getElementsByTagName('IBAN')[0]?.textContent};
+        return { iban: idElem?.getElementsByTagName('IBAN')[0]?.textContent };
     }
 
     get currency() {
-       return this.element.getElementsByTagName('Ccy')[0]?.textContent;
+        return this.element.getElementsByTagName('Ccy')[0]?.textContent;
     }
 
     get servicer(): Servicer {
-       return new Servicer(this.element.getElementsByTagName('Svcr')[0]);
+        return new Servicer(this.element.getElementsByTagName('Svcr')[0]);
     }
 }
 
@@ -51,7 +51,7 @@ export class Servicer {
     constructor(private element: Element) { }
 
     get financialInstitutionId(): FinancialInstitutionId {
-       return new FinancialInstitutionId(this.element.getElementsByTagName('FinInstnId')[0]);
+        return new FinancialInstitutionId(this.element.getElementsByTagName('FinInstnId')[0]);
     }
 }
 
@@ -59,10 +59,10 @@ export class FinancialInstitutionId {
     constructor(private element: Element) { }
 
     get bic() {
-       return this.element.getElementsByTagName('BIC')[0]?.textContent;
+        return this.element.getElementsByTagName('BIC')[0]?.textContent;
     }
 
     get name() {
-       return this.element.getElementsByTagName('Nm')[0]?.textContent;
+        return this.element.getElementsByTagName('Nm')[0]?.textContent;
     }
 }

@@ -9,11 +9,11 @@ describe('camt.052', () => {
     let camt: string;
     let accreport: AccountReport;
     let entries: Array<Entry>;
-    
+
     beforeAll(() => {
         camt = fs.readFileSync(path.resolve(__dirname, 'test.xml'), 'utf-8')
     })
-    
+
     it('parse should not return a result', function () {
         const report = CAMT.parse(camt);
         expect(report).toBeDefined();
@@ -40,7 +40,7 @@ describe('camt.052', () => {
         });
 
         describe('Report should have a valid account', function () {
-            it('Account should have basic properties', function() {
+            it('Account should have basic properties', function () {
                 const account = accreport.report.account;
                 expect(account).toBeDefined();
                 expect(account.id.iban).toEqual('DE86999999999999999999');
