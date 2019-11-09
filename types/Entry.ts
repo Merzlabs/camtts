@@ -27,4 +27,20 @@ export class Entry {
     get additionalEntryInfo() {
         return this.element?.getElementsByTagName('AddtlNtryInf')[0]?.textContent;
     }
+
+    get entryDetails(): EntryDetails {
+        return new EntryDetails(this.element?.getElementsByTagName('NtryDtls')[0]);
+    }
+}
+
+export class EntryDetails {
+    constructor(private element: Element|undefined) { }
+
+    get transactionDetails(): TransactionDetails {
+        return new TransactionDetails(this.element?.getElementsByTagName('TxDtls')[0]);
+    }
+}
+
+export class TransactionDetails {
+    constructor(private element: Element|undefined) { }
 }
