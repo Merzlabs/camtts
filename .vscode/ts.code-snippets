@@ -16,7 +16,7 @@
         "prefix": "c-get",
         "body": [
             "get ${1:property}() {",
-            "   return this.element.getElementsByTagName('${2:xmltag}')[0]?.textContent;",
+            "    return this.element?.getElementsByTagName('${2:xmltag}')[0]?.textContent;",
             "}",
         ],
         "description": "XML parsing for getting tag from element"
@@ -25,7 +25,7 @@
         "prefix": "c-type",
         "body": [
             "get ${1:property}(): ${2:type} {",
-            "   return new ${2:type}(this.element.getElementsByTagName('${3:xmltag}')[0]);",
+            "    return new ${2:type}(this.element.getElementsByTagName('${3:xmltag}')[0]);",
             "}",
         ],
         "description": "XML parsing for getting tag from element"
