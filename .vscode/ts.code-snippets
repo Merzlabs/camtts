@@ -20,5 +20,21 @@
             "}",
         ],
         "description": "XML parsing for getting tag from element"
+    },
+    "CAMT Type": {
+        "prefix": "c-type",
+        "body": [
+            "get ${1:property}(): ${2:type} {",
+            "   return new ${2:type}(this.element.getElementsByTagName('${3:xmltag}')[0]);",
+            "}",
+        ],
+        "description": "XML parsing for getting tag from element"
+    },
+    "CAMT Constructor": {
+        "prefix": "c-constructor",
+        "body": [
+            "constructor(private element: Element) { }",
+        ],
+        "description": "Constructor with Element"
     }
 }
