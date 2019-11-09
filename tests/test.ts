@@ -73,6 +73,7 @@ describe('camt.052', () => {
                 expect(entry.creditdebitIndicator).toEqual('DBIT');
                 expect(entry.bookindDate.date).toEqual('2019-11-08');
                 expect(entry.accountServiceRef).toEqual('NONREF');
+                expect(entry.additionalEntryInfo).toEqual('TRANSFER');
             });
         });
     });

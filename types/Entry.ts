@@ -23,4 +23,8 @@ export class Entry {
     get accountServiceRef() {
         return this.element?.getElementsByTagName('AcctSvcrRef')[0]?.textContent;
     }
+
+    get additionalEntryInfo() {
+        return this.element?.getElementsByTagName('AddtlNtryInf')[0]?.textContent;
+    }
 }
