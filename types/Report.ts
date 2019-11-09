@@ -1,3 +1,5 @@
+import { Entry } from "./Entry";
+
 export class Report {
     constructor(private element: Element) { }
 
@@ -15,6 +17,16 @@ export class Report {
 
     get account(): Account {
         return new Account(this.element.getElementsByTagName('Acct')[0]);
+    }
+
+    get entries(): Array<Entry> {
+        let entries: Array<Entry> = [];
+        const elements = this.element.getElementsByTagName('Ntry');
+        for (let i = 0; i < elements.length; i++) {
+            entries.push(new Entry(elements.item(i)));
+        }
+
+        return entries;
     }
 }
 

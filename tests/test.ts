@@ -1,5 +1,6 @@
 import { AccountReport } from "../types/AccountReport";
 import { CAMT } from "..";
+import { Entry } from "../types/Entry";
 
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +8,7 @@ const path = require('path');
 describe('camt.052', () => {
     let camt: string;
     let accreport: AccountReport;
+    let entries: Array<Entry>;
     
     beforeAll(() => {
         camt = fs.readFileSync(path.resolve(__dirname, 'test.xml'), 'utf-8')
@@ -50,6 +52,25 @@ describe('camt.052', () => {
                 expect(servicer).toBeDefined();
                 expect(servicer.financialInstitutionId.bic).toEqual('TESTDE99999');
                 expect(servicer.financialInstitutionId.name).toEqual('Test');
+            });
+        });
+
+        describe('Report should have a entries', function () {
+            beforeEach(() => {
+                entries = accreport.report.entries;
+            })
+
+            it('Entries should exist all', function () {
+                expect(entries.length).toEqual(3);
+            });
+
+            it('Entry[0] should be valid', function () {
+                const entry = entries[0];
+                expect(entry).toBeDefined();
+                expect(entry.reference).toBeUndefined();
+                expect(entry.amount.currency).toEqual('EUR');
+                expect(entry.amount.value).toEqual('4.02');
+                expect(entry.creditdebitIndicator).toEqual('DBIT');
             });
         });
     });
