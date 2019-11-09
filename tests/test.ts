@@ -74,6 +74,14 @@ describe('camt.052', () => {
                 expect(entry.bookindDate.date).toEqual('2019-11-08');
                 expect(entry.accountServiceRef).toEqual('NONREF');
                 expect(entry.additionalEntryInfo).toEqual('TRANSFER');
+
+                //Check details
+                expect(entry.entryDetails.transactionDetails).toBeDefined();
+
+                //Transaction parties
+                expect(entry.entryDetails.transactionDetails.relatedParties).toBeDefined();
+                expect(entry.entryDetails.transactionDetails.relatedParties.debitorAccount.id.iban).toEqual('DE86999999999999999999');
+                expect(entry.entryDetails.transactionDetails.relatedParties.creditorAccount.id.iban).toEqual('HR9123912345670329373');
             });
         });
     });

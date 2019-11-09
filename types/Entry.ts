@@ -41,4 +41,25 @@ export class EntryDetails extends CAMTElement {
 }
 
 export class TransactionDetails extends CAMTElement {
+
+    get relatedParties(): RelatedParties {
+        return new RelatedParties(this.element?.getElementsByTagName('RltdPties')[0]);
+    }
+}
+
+export class RelatedParties extends CAMTElement {
+
+    get debitorAccount() {
+        const acc = this.element?.getElementsByTagName('DbtrAcct')[0];
+        const iban = acc?.getElementsByTagName('Id')[0]?.getElementsByTagName('IBAN')[0]?.textContent;
+
+        return {id: {iban}};
+    }
+
+    get creditorAccount() {
+        const acc = this.element?.getElementsByTagName('CdtrAcct')[0];
+        const iban = acc?.getElementsByTagName('Id')[0]?.getElementsByTagName('IBAN')[0]?.textContent;
+
+        return { id: { iban } };
+    }
 }
