@@ -14,7 +14,6 @@ describe('camt.052', () => {
     
     it('parse should not return a result', function () {
         const report = CAMT.parse(camt);
-        console.log(report.groupHeader.messageId);
         expect(report).toBeDefined();
     });
 });

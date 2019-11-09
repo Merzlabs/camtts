@@ -10,6 +10,10 @@ export class GroupHeader {
     constructor(private element: Element) { }
 
     get messageId() {
-        return this.element.getElementsByTagName('MsgId')[0].textContent;
+        return this.element.getElementsByTagName('MsgId')[0]?.textContent;
+    }
+
+    get creationDateTime() {
+        return this.element.getElementsByTagName('CreDtTm')[0]?.textContent;
     }
 }
