@@ -1,6 +1,6 @@
-export class Entry {
-    constructor(private element: Element|null) { }
+import { CAMTElement } from "./Base";
 
+export class Entry extends CAMTElement {
     get reference() {
         return this.element?.getElementsByTagName('NtryRef')[0]?.textContent;
     }
@@ -33,14 +33,12 @@ export class Entry {
     }
 }
 
-export class EntryDetails {
-    constructor(private element: Element|undefined) { }
+export class EntryDetails extends CAMTElement {
 
     get transactionDetails(): TransactionDetails {
         return new TransactionDetails(this.element?.getElementsByTagName('TxDtls')[0]);
     }
 }
 
-export class TransactionDetails {
-    constructor(private element: Element|undefined) { }
+export class TransactionDetails extends CAMTElement {
 }

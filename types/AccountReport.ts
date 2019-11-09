@@ -1,4 +1,5 @@
 import { Report } from "./Report";
+import { CAMTElement } from "./Base";
 
 export class AccountReport {
     constructor(private doc: Document) { }
@@ -12,14 +13,13 @@ export class AccountReport {
     }
 }
 
-export class GroupHeader {
-    constructor(private element: Element) { }
+export class GroupHeader extends CAMTElement {
 
     get messageId() {
-        return this.element.getElementsByTagName('MsgId')[0]?.textContent;
+        return this.element?.getElementsByTagName('MsgId')[0]?.textContent;
     }
 
     get creationDateTime() {
-        return this.element.getElementsByTagName('CreDtTm')[0]?.textContent;
+        return this.element?.getElementsByTagName('CreDtTm')[0]?.textContent;
     }
 }

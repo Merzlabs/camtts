@@ -12,5 +12,8 @@ Adding new methods to classes to get tags from the XML element is pretty quick t
 ### Snippets for quick new parsings
 
 * `c-get` Simple tag getter
-* `c-constructor` New element constructor
 * `c-type` Parse new type instead of simple text
+
+## Element
+
+`CAMTElement` is a base class for all objects below 'document'.

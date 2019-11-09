@@ -30,11 +30,4 @@
         ],
         "description": "XML parsing for getting tag from element"
     },
-    "CAMT Constructor": {
-        "prefix": "c-constructor",
-        "body": [
-            "constructor(private element: Element) { }",
-        ],
-        "description": "Constructor with Element"
-    }
 }
