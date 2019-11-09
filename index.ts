@@ -1,6 +1,6 @@
 import { AccountReport } from "./types/AccountReport";
 
-export class CAMT {
+export default class CAMT {
 
     static parse(toparse: string) {
         let parser: DOMParser;

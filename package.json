@@ -2,14 +2,14 @@
   "name": "camtts",
   "version": "0.0.1",
   "description": "CAMT parser for Typescript",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublish": "tsc",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
   },
-  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Merzlabs/camtts.git"
