@@ -82,6 +82,14 @@ describe('camt.052', () => {
                 expect(entry.entryDetails.transactionDetails.relatedParties).toBeDefined();
                 expect(entry.entryDetails.transactionDetails.relatedParties.debitorAccount.id.iban).toEqual('DE86999999999999999999');
                 expect(entry.entryDetails.transactionDetails.relatedParties.creditorAccount.id.iban).toEqual('HR9123912345670329373');
+                expect(entry.entryDetails.transactionDetails.relatedParties.debitorAccount.id.iban).toEqual('DE86999999999999999999');
+                expect(entry.entryDetails.transactionDetails.relatedParties.creditor.name).toEqual('Creditor Name');
+                expect(entry.entryDetails.transactionDetails.relatedParties.ultimateCreditor.name).toEqual('Ultimate Creditor Name');
+                expect(entry.entryDetails.transactionDetails.relatedParties.debtor.name).toEqual('Debtor Name');
+                expect(entry.entryDetails.transactionDetails.relatedParties.ultimateDebtor.name).toEqual('Ultimate Debtor Name');
+
+                //Verwendungszweck
+                expect(entry.entryDetails.remittanceInformation.unstructured[0]).toEqual('COUNT        1');
             });
         });
     });
