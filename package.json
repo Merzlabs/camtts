@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "@types/node": "^13.9.5",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.3.0"
   }
 }
