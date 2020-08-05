@@ -59,7 +59,7 @@ export class RelatedParties extends CAMTElement {
     /**
      * Financial institution for the creditor/ Zahlungsdienstleister des Debtors
      */
-    get debitorAccount() {
+    get debtorAccount() {
         const acc = this.element?.getElementsByTagName('DbtrAcct')[0];
         const iban = acc?.getElementsByTagName('Id')[0]?.getElementsByTagName('IBAN')[0]?.textContent;
 
@@ -77,7 +77,7 @@ export class RelatedParties extends CAMTElement {
     }
 
     /**
-     * Ultimate debitor different from creditor / Abweichender Zahler
+     * Ultimate debtor different from creditor / Abweichender Zahler
      */
     get ultimateDebtor() {
         const acc = this.element?.getElementsByTagName('UltmtDbtr')[0];
