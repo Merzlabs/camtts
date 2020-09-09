@@ -5,7 +5,7 @@
 
 Based on the SEPA specs found [here](http://www.ebics.de/spezifikation/dfue-abkommen-anlage-3-formatstandards/)
 
-## Developemt
+## Development
 
 Adding new methods to classes for getting tags from XML elements is easily achievable. Just use the Visual Studio Code snippet in this project. Type `c-get` and a new code snippet will appear. The cursor will automatically position at the method name and swich to the XML tag with *TAB*.
 
