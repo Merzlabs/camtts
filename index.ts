@@ -7,7 +7,7 @@ export default class CAMT {
 
         // Use native DOMParser in Browser and package in NodeJS
         if (typeof DOMParser === 'undefined') {
-            const NodeParser = require('xmldom').DOMParser;
+            const NodeParser = require('@xmldom/xmldom').DOMParser;
             parser = new NodeParser();
         } else {
             parser = new DOMParser();
